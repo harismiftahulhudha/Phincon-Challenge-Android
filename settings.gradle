@@ -1,0 +1,26 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "Phincon Challenge"
+include ':app'
+include ':core'
+include ':pokemon'
+include ':pokemon:datasource'
+include ':pokemon:domain'
+include ':pokemon:interactor'
+include ':pokemon:ui_detail'
+include ':pokemon:ui_mypokemon'
+include ':pokemon:ui_pokemon'
+include ':pokemon:ui_rename_pokemon'
+include ':pokemon:ui_shares'

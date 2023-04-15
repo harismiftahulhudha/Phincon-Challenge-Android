@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/margin_small"
+    android:orientation="horizontal">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/txtLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.4"
+        android:text="@string/base_experience"
+        android:textColor="@color/warmGrey"
+        android:textSize="@dimen/font_standard" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/txtValue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.6"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_standard"
+        android:textStyle="bold"
+        tools:text="40" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

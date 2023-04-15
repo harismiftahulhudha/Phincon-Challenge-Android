@@ -1,0 +1,108 @@
+apply plugin: "com.android.library"
+apply plugin: "org.jetbrains.kotlin.android"
+apply plugin: "kotlin-parcelize"
+apply plugin: "kotlin-kapt"
+apply plugin: "kotlin-android"
+apply plugin: "com.google.dagger.hilt.android"
+apply plugin: "androidx.navigation.safeargs.kotlin"
+
+def localProperties = new Properties()
+localProperties.load(new FileInputStream(rootProject.file("local.properties")))
+
+android {
+    compileSdk Android.compileSdk
+
+    defaultConfig {
+        minSdk Android.minSdk
+        targetSdk Android.targetSdk
+        versionCode Android.versionCode
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "LIMIT", "\"${localProperties["LIMIT"]}\""
+        buildConfigField "String", "BASE_POKEMON_IMAGE_URL", "\"${localProperties["BASE_POKEMON_IMAGE_URL"]}\""
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                annotationProcessorOptions { arguments += ["room.schemaLocation": "$projectDir/schemas".toString()] }
+            }
+        }
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    flavorDimensions += "environment"
+
+    productFlavors {
+
+        dev {
+            dimension "environment"
+            buildConfigField "String", "BUILD_VARIANT", "\"DEV\""
+            buildConfigField "String", "BASE_POKEMON_URL", "\"${localProperties["BASE_POKEMON_URL_DEV"]}\""
+            buildConfigField "String", "BASE_PERSONAL_POKEMON_URL", "\"${localProperties["BASE_PERSONAL_POKEMON_URL_DEV"]}\""
+            resValue "string", "app_title", "Phincon Challenge - Dev"
+        }
+
+        prod {
+            dimension "environment"
+            buildConfigField "String", "BUILD_VARIANT", "\"PROD\""
+            buildConfigField "String", "BASE_POKEMON_URL", "\"${localProperties["BASE_POKEMON_URL_PROD"]}\""
+            buildConfigField "String", "BASE_PERSONAL_POKEMON_URL", "\"${localProperties["BASE_PERSONAL_POKEMON_URL_PROD"]}\""
+            resValue "string", "app_title", "Phincon Challenge"
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_11.toString()
+        freeCompilerArgs += "-Xopt-in=kotlinx.coroutines.ExperimentalCoroutinesApi"
+    }
+
+    kapt {
+        correctErrorTypes true
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    packagingOptions {
+        exclude("META-INF/AL2.0")
+        exclude("META-INF/LGPL2.1")
+    }
+
+    hilt {
+        enableAggregatingTask = true
+    }
+}
+
+dependencies{
+
+    implementation Androidx.core
+    implementation Androidx.appCompat
+    implementation Google.material
+    implementation Androidx.constraint
+    implementation Androidx.legacy
+
+    // Coroutine
+    implementation Kotlin.coroutineCore
+    implementation Kotlin.coroutineAndroid
+
+    // Hilt
+    implementation Hilt.hiltAndroid
+    kapt Hilt.hiltCompiler
+
+    // Timber
+    implementation Timber.library
+}

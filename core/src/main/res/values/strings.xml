@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="icon">Icon</string>
+    <string name="reload">Reload</string>
+    <string name="info_empty_500">This page still under construction !</string>
+    <string name="pokemon">Pokemon</string>
+    <string name="my_pokemon">My Pokemon</string>
+    <string name="detail_pokemon">Detail Pokemon</string>
+    <string name="search">Search</string>
+    <string name="search_pokemon">Search Pokemon</string>
+    <string name="about">About</string>
+    <string name="abilities">Abilities</string>
+    <string name="moves">Moves</string>
+    <string name="height">Height</string>
+    <string name="weight">weight</string>
+    <string name="base_experience">Base Experience</string>
+    <string name="types">Types</string>
+    <string name="stats">Stats</string>
+    <string name="base_stats">Base Stats</string>
+    <string name="catch_pokemon">Catch Pokemon</string>
+    <string name="release_pokemon">Release Pokemon</string>
+    <string name="please_wait">Please Wait…</string>
+    <string name="rename_pokemon">Rename Pokemon</string>
+    <string name="nickname">Nickname</string>
+    <string name="save">Save</string>
+</resources>

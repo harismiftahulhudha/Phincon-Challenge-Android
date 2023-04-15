@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/buildSrc" />
+            <option value="$PROJECT_DIR$/core" />
+            <option value="$PROJECT_DIR$/pokemon" />
+            <option value="$PROJECT_DIR$/pokemon/datasource" />
+            <option value="$PROJECT_DIR$/pokemon/domain" />
+            <option value="$PROJECT_DIR$/pokemon/interactor" />
+            <option value="$PROJECT_DIR$/pokemon/ui_detail" />
+            <option value="$PROJECT_DIR$/pokemon/ui_mypokemon" />
+            <option value="$PROJECT_DIR$/pokemon/ui_pokemon" />
+            <option value="$PROJECT_DIR$/pokemon/ui_rename_pokemon" />
+            <option value="$PROJECT_DIR$/pokemon/ui_shares" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

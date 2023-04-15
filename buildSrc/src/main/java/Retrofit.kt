@@ -1,0 +1,6 @@
+object Retrofit {
+    private const val retrofitVersion = "2.9.0"
+    const val retrofit = "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    const val retrofitGsonConverter = "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    const val retrofitScalarsConverter = "com.squareup.retrofit2:converter-scalars:$retrofitVersion"
+}
